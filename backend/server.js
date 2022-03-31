@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors= require('cors');
 const mongoose = require('mongoose');
-const blogRoutes=require('./routes/blog')
+const blogRoutes=require('./routes/blog');
+const authRoutes=require('./routes/auth');
 
 require('dotenv').config();
 //app
@@ -28,6 +29,7 @@ app.use(cors());
 
 //routes middleware
 app.use('/api',blogRoutes);
+app.use('/api',authRoutes);
 
 
 //accessing port value from env file or run the or value
